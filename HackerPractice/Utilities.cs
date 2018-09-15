@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HackerPractice
 {
-    static public class Utilities
+    public static class Utilities
     {
         /*****************************************************************
         * Procedure: GetIntArray
@@ -15,7 +15,7 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public int[] GetIntArray(string input)
+        public static int[] GetIntArray(string input)
         {
             int[] nums = Array.ConvertAll(input.Split(' '), int.Parse);
 
@@ -28,11 +28,22 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public string[] GetStrArray(string input)
+        public static string[] GetStrArray(string input)
         {
             string[] nums = input.Split(' ');
 
             return nums;
+        }
+
+        /*****************************************************************
+        * Procedure: Str2StrArray
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        public static string[] Str2StrArray(string input)
+        {
+            return input.ToCharArray().Select(c => c.ToString()).ToArray();
         }
 
         /*****************************************************************
@@ -41,7 +52,7 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public void PrintArray(int[] input)
+        public static void PrintArray(int[] input)
         {
             Debug.Write("\r\n");
 
@@ -59,7 +70,7 @@ namespace HackerPractice
         * Input: IntoJagArray(3,3, "1 2 3 4 5 6 7 8 9")
         * Output: int[][]
         *****************************************************************/
-        static public int[][] IntoJagArray(short rowLen, short colLen, string input)
+        public static int[][] IntoJagArray(short rowLen, short colLen, string input)
         {
             int[] s = GetIntArray(input);
             int[][] output = new int[rowLen][];
@@ -90,14 +101,14 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public void CheckOutput<T>(T input, T criteria)
+        public static void CheckOutput<T>(T input, T criteria)
         {
             var result = input.Equals(criteria) ? "pass" : "fail";
 
             Console.WriteLine(result + " --> " + input);
         }
 
-        static public void CheckOutput<T>(IList<T> input, IList<T> criteria)
+        public static void CheckOutput<T>(IList<T> input, IList<T> criteria)
         {
             var result = input.SequenceEqual(criteria) ? "pass" : "fail";
 
@@ -115,7 +126,7 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public int GetJaggedArrayLen(int[][] s)
+        public static int GetJaggedArrayLen(int[][] s)
         {
             int sElements = 0;
 

@@ -19,10 +19,10 @@ namespace HackerPractice.CodingChallenge
         {
             Console.WriteLine("-----braces-----");
 
-            var input = Utilities.GetStrArray("{[()]} {[(])} {{[[(())]]}}");
+            var input = Utilities.GetStrArray("()} {[()]} {[(])} {{[[(())]]}}");
 
             var output = braces(input);
-            Utilities.CheckOutput<string>(output, Utilities.GetStrArray("YES NO YES"));
+            Utilities.CheckOutput<string>(output, Utilities.GetStrArray("NO YES NO YES"));
         }
 
         /*****************************************************************
@@ -31,107 +31,62 @@ namespace HackerPractice.CodingChallenge
         * Input: 
         * Output: 
         *****************************************************************/
-        public string[] braces(string[] values)
+        public string[] braces(string[] input)
         {
             //() {} []
 
-            string[] output = new string[values.Count()];
-            int index = 0;
-            var st = new Stack();
-            bool isBalanced = true;
-            char lastChar = ' ';
+            string[] output = new string[input.Length];
+            var index = 0;
+            var stack = new Stack();
 
-            foreach (var brace in values)
+            foreach (var word in input)
             {
-                //Console.WriteLine(brace);
-                Char[] lineInput = brace.ToCharArray();
+                var wordArray = word.ToCharArray().Select(c => c.ToString()).ToArray();
+                var isBalanced = true;
 
-                foreach (var letter in lineInput)
+                foreach (var letter in wordArray)
                 {
-                    //Console.WriteLine(letter);
                     switch (letter)
                     {
-                        case '{':
-                        case '(':
-                        case '[':
-                            st.Push(letter);
-                            lastChar = letter;
+                        case "{":
+                        case "(":
+                        case "[":
+                            stack.Push(letter);
                             break;
-                        case '}':
-                            if (lastChar.Equals('{'))
-                            {
-                                if (st.Count == 0)
-                                {
-                                    isBalanced = false;
-                                    break;
-                                }
-                                else
-                                {
-                                    st.Pop();
-                                    if (st.Count > 0) lastChar = (char)st.Peek();
-                                }
-                            }
-                            else
-                            {
-                                isBalanced = false;
-                                break;
-                            }
+                        case "}":
+                            isBalanced = CheckTopAndBalanceStack(ref stack, "{");
                             break;
-                        case ')':
-                            if (lastChar.Equals('('))
-                            {
-                                if (st.Count == 0)
-                                {
-                                    isBalanced = false;
-                                    break;
-                                }
-                                else
-                                {
-                                    st.Pop();
-                                    if (st.Count > 0) lastChar = (char)st.Peek();
-                                }
-                            }
-                            else
-                            {
-                                isBalanced = false;
-                                break;
-                            }
+                        case ")":
+                            isBalanced = CheckTopAndBalanceStack(ref stack, "(");
                             break;
-                        case ']':
-                            if (lastChar.Equals('['))
-                            {
-                                if (st.Count == 0)
-                                {
-                                    isBalanced = false;
-                                    break;
-                                }
-                                else
-                                {
-                                    st.Pop();
-                                    if (st.Count > 0) lastChar = (char)st.Peek();
-                                }
-                            }
-                            else
-                            {
-                                isBalanced = false;
-                                break;
-                            }
+                        case "]":
+                            isBalanced = CheckTopAndBalanceStack(ref stack, "[");
                             break;
                     }
+
+                    if (!isBalanced) break; // no need to continue if already not balanced
                 }
 
-                if (isBalanced)
-                {
-                    output[index++] = "YES";
-                }
-                else
-                {
-                    output[index++] = "NO";
-                    isBalanced = true;
-                }
+                output[index++] = isBalanced ? "YES" : "NO";
+            }
+            return output;
+        }
+
+        /*****************************************************************
+        * Procedure: CheckTopAndBalanceStack
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        private bool CheckTopAndBalanceStack(ref Stack st, string brace)
+        {
+            if (st.Count > 0 && st.Peek().Equals(brace))
+            {
+                st.Pop();
+                return true;
             }
 
-            return output;
+            return false;
         }
     }
 }
