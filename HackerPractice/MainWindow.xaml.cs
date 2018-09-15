@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HackerPractice.Easy;
 using HackerPractice.Medium;
+using HackerPractice.Examples;
+using HackerPractice.CodingChallenge;
 
 namespace HackerPractice
 {
@@ -29,10 +31,12 @@ namespace HackerPractice
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var tester = new PickingNumbers();
+            var tester = new Braces();
 
             tester.RunTest();
         }
 
     }
 }
+
+//  output = Foo(Utilities.GetIntArray("2 5 -4 11 0 8 22 67 51 6"));

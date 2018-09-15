@@ -23,6 +23,19 @@ namespace HackerPractice
         }
 
         /*****************************************************************
+        * Procedure: GetStrArray
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        static public string[] GetStrArray(string input)
+        {
+            string[] nums = input.Split(' ');
+
+            return nums;
+        }
+
+        /*****************************************************************
         * Procedure: PrintArray
         * Description: 
         * Input: 
@@ -77,11 +90,79 @@ namespace HackerPractice
         * Input: 
         * Output: 
         *****************************************************************/
-        static public void CheckOutput(int input, int criteria)
+        static public void CheckOutput<T>(T input, T criteria)
         {
-            var result = input == criteria ? "pass" : "fail";
+            var result = input.Equals(criteria) ? "pass" : "fail";
 
             Console.WriteLine(result + " --> " + input);
         }
+
+        static public void CheckOutput<T>(IList<T> input, IList<T> criteria)
+        {
+            var result = input.SequenceEqual(criteria) ? "pass" : "fail";
+
+            Console.Write(result + " --> ");
+            foreach(var e in input)
+            {
+                Console.Write(e + " ");
+            }
+            Console.WriteLine();
+        }
+
+        /*****************************************************************
+        * Procedure: GetJaggedArrayLen
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        static public int GetJaggedArrayLen(int[][] s)
+        {
+            int sElements = 0;
+
+            foreach (var row in s)
+            {
+                sElements += row.GetLength(0);
+            }
+
+            return sElements;
+        }
     }
 }
+
+/*
+ * Sample
+ * 
+    static public T GeTArray<T>(this string input) where T : IConvertible
+    {//https://stackoverflow.com/questions/10574504/how-to-use-t-tryparse-in-a-generic-method-while-t-is-either-double-or-int
+        var thisType = default(T);
+        var typeCode = thisType.GetTypeCode();
+
+        if (typeCode == TypeCode.Int32)
+        {
+            int nums;
+            int.TryParse(input, out nums);
+            return (T)Convert.ChangeType(nums, typeCode);
+        }
+        else if (typeCode == TypeCode.String)
+        {
+            var nums = input.Split(',');
+            return (T)Convert.ChangeType(nums, typeCode);
+        }
+
+        return (T)Convert.ChangeType(1, TypeCode.Int32);
+    }
+------------------------------------------------------------------------------
+
+int[,,] intarray3Dd = new int[2, 2, 3] 
+            { 
+                { 
+                    { 1, 2, 3 },
+                    { 4, 5, 6 }
+                },
+                { 
+                    { 7, 8, 9 },
+                    { 10, 11, 12 }
+                }
+            };
+
+//*/

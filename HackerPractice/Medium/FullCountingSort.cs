@@ -1,9 +1,12 @@
 ﻿using System;
-using HackerPractice.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HackerPractice.Easy
+namespace HackerPractice.Medium
 {
-    public class template : IProblem
+    public class FullCountingSort
     {
         /*****************************************************************
         * Procedure: RunTest
@@ -13,10 +16,10 @@ namespace HackerPractice.Easy
         *****************************************************************/
         public void RunTest()
         {
-            Console.WriteLine("-----Foo-----");
+            int output = 0;
 
-            var output = Foo(1);
-            Utilities.CheckOutput<int>(output, 6);
+            output = Foo(Utilities.GetIntArray("2 5 -4 11 0 8 22 67 51 6"));
+            Utilities.CheckOutput<int>(output, 0);
         }
 
         /*****************************************************************
@@ -25,7 +28,7 @@ namespace HackerPractice.Easy
         * Input: 
         * Output: 
         *****************************************************************/
-        public int Foo(int n)
+        public int Foo(int[] array)
         {
 
             return 0;

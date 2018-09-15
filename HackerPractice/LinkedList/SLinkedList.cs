@@ -9,5 +9,6 @@ namespace HackerPractice.LinkedList
     public class SLinkedList<T>
     {
         public Node<T> head;
+        public Node<T> current;
     }
 }

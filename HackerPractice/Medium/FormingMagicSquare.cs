@@ -21,13 +21,13 @@ namespace HackerPractice.Medium
             int output = 0;
 
             output = formingMagicSquare(Utilities.IntoJagArray(3, 3, "5 3 4 1 5 8 6 4 2"));
-            Utilities.CheckOutput(output, 7);
+            Utilities.CheckOutput<int>(output, 7);
 
             output = formingMagicSquare(Utilities.IntoJagArray(3, 3, "4 9 2 3 5 7 8 1 5"));
-            Utilities.CheckOutput(output, 1);
+            Utilities.CheckOutput<int>(output, 1);
 
             output = formingMagicSquare(Utilities.IntoJagArray(3, 3, "4 8 2 4 5 7 6 1 6"));
-            Utilities.CheckOutput(output, 4);
+            Utilities.CheckOutput<int>(output, 4);
         }
 
         /*****************************************************************

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CodingChallenge\Braces.cs" />
     <Compile Include="Easy\AppendAndDelete.cs" />
     <Compile Include="Easy\AppleOrange.cs" />
     <Compile Include="Easy\BetweenTwoSets.cs" />
@@ -66,13 +67,18 @@
     <Compile Include="Easy\PickingNumbers.cs" />
     <Compile Include="Easy\template.cs" />
     <Compile Include="Easy\TimeConversion.cs" />
+    <Compile Include="Easy\UtopianTree.cs" />
+    <Compile Include="Examples\CountingSort.cs" />
+    <Compile Include="Examples\QuickSort.cs" />
     <Compile Include="LinkedList\DLinkedList.cs" />
     <Compile Include="LinkedList\DNode.cs" />
     <Compile Include="LinkedList\Node.cs" />
     <Compile Include="LinkedList\SLinkedList.cs" />
+    <Compile Include="Medium\3DSurfaceArea.cs" />
     <Compile Include="Medium\Encryption.cs" />
     <Compile Include="Medium\ExtraLongFactorials.cs" />
     <Compile Include="Medium\FormingMagicSquare.cs" />
+    <Compile Include="Medium\FullCountingSort.cs" />
     <Compile Include="Medium\NewYearChaos.cs" />
     <Compile Include="Medium\TimeInWords.cs" />
     <Compile Include="Model\IProblem.cs" />

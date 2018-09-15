@@ -1,57 +1,55 @@
-﻿namespace HackerPractice.Medium
+﻿using System;
+
+namespace HackerPractice.Medium
 {
     public class TimeInWords
     {
-        /* for "main"
-            var tester = new TimeInWords();
-
-            string output = "";
-
-            output = tester.timeInWords(5, 47);
-            CheckOutput(output, "thirteen minutes to six");
-
-            output = tester.timeInWords(3, 00);
-            CheckOutput(output, "three o' clock");
-
-            output = tester.timeInWords(7, 15);
-            CheckOutput(output, "quarter past seven");
-
-            output = tester.timeInWords(11, 59);
-            CheckOutput(output, "one minute to twelve");
-
-            output = tester.timeInWords(12, 00);
-            CheckOutput(output, "twelve o' clock");
-
-            output = tester.timeInWords(1, 01);
-            CheckOutput(output, "one minute past one");
-
-            output = tester.timeInWords(2, 16);
-            CheckOutput(output, "sixteen minutes past two");
-
-            output = tester.timeInWords(3, 30);
-            CheckOutput(output, "half past three");
-
-            output = tester.timeInWords(4, 31);
-            CheckOutput(output, "twenty nine minutes to five");
-
-            output = tester.timeInWords(5, 45);
-            CheckOutput(output, "quarter to six");
-
-            output = tester.timeInWords(6, 50);
-            CheckOutput(output, "ten minutes to seven");
-
-            output = tester.timeInWords(12, 55);
-            CheckOutput(output, "five minutes to one");
-
-        private void CheckOutput (string input, string criteria)
+        /*****************************************************************
+        * Procedure: RunTest
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        public void RunTest()
         {
-            var result = input.Equals(criteria) ? "pass" : "fail";
+            Console.WriteLine("-----TimeInWords-----");
 
-            Console.WriteLine(result + " --> " + input);
+            var output = timeInWords(5, 47);
+            Utilities.CheckOutput<string>(output, "thirteen minutes to six");
+
+            output = timeInWords(3, 00);
+            Utilities.CheckOutput<string>(output, "three o' clock");
+
+            output = timeInWords(7, 15);
+            Utilities.CheckOutput<string>(output, "quarter past seven");
+
+            output = timeInWords(11, 59);
+            Utilities.CheckOutput<string>(output, "one minute to twelve");
+
+            output = timeInWords(12, 00);
+            Utilities.CheckOutput<string>(output, "twelve o' clock");
+
+            output = timeInWords(1, 01);
+            Utilities.CheckOutput<string>(output, "one minute past one");
+
+            output = timeInWords(2, 16);
+            Utilities.CheckOutput<string>(output, "sixteen minutes past two");
+
+            output = timeInWords(3, 30);
+            Utilities.CheckOutput<string>(output, "half past three");
+
+            output = timeInWords(4, 31);
+            Utilities.CheckOutput<string>(output, "twenty nine minutes to five");
+
+            output = timeInWords(5, 45);
+            Utilities.CheckOutput<string>(output, "quarter to six");
+
+            output = timeInWords(6, 50);
+            Utilities.CheckOutput<string>(output, "ten minutes to seven");
+
+            output = timeInWords(12, 55);
+            Utilities.CheckOutput<string>(output, "five minutes to one");
         }
-        //*/
-
-        public string input = "";
 
         /*****************************************************************
         * Procedure: timeInWords
