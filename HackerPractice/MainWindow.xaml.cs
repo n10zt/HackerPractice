@@ -35,7 +35,7 @@ namespace HackerPractice
         {
             //*
             IProblem tester = new Template1();
-            var test = 3;
+            var test = 2;
 
             switch (test)
             {
