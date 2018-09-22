@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HackerPractice.Model;
 
 namespace HackerPractice.Examples
 {
-    public class QuickSort
+    public class QuickSort_
     {
         /*****************************************************************
         * Procedure: RunTest
@@ -46,7 +47,7 @@ namespace HackerPractice.Examples
         }
 
         /*****************************************************************
-        * Procedure: Foo
+        * Procedure: quicksort
         * Description: 
         * Input: 
         * Output: 

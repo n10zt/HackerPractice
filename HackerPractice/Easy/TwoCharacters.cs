@@ -1,9 +1,13 @@
 ﻿using System;
-using HackerPractice.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HackerPractice.Medium;
 
 namespace HackerPractice.Easy
 {
-    public class Template : IProblem
+    public class TwoCharacters
     {
         /*****************************************************************
         * Procedure: RunTest
@@ -13,22 +17,30 @@ namespace HackerPractice.Easy
         *****************************************************************/
         public void RunTest()
         {
-            Console.WriteLine("-----Foo-----");
+            Console.WriteLine("-----alternate-----");
 
-            var output = Foo(1);
-            Utilities.CheckOutput<int>(output, 6);
+            var output = alternate("beabeefeab");
+            Utilities.CheckOutput<int>(output, 5);
         }
 
         /*****************************************************************
-        * Procedure: Foo
+        * Procedure: alternate
         * Description: 
         * Input: 
         * Output: 
         *****************************************************************/
-        public int Foo(int n)
+        public int alternate(string s)
         {
+            var sArray = s.ToCharArray().Select(c => c.ToString()).ToArray();
+
+            var distinct = sArray.Distinct(); // distinct.Count = n in Combinations Formula
+
+
+
 
             return 0;
         }
+
+
     }
 }

@@ -36,6 +36,19 @@ namespace HackerPractice
         }
 
         /*****************************************************************
+        * Procedure: GetDoubleArray
+        * Description: 
+        * Input: 
+        * Output: 
+        *****************************************************************/
+        public static double[] GetDoubleArray(string input)
+        {
+            var nums = Array.ConvertAll(input.Split(' '), double.Parse);
+
+            return nums;
+        }
+
+        /*****************************************************************
         * Procedure: Str2StrArray
         * Description: 
         * Input: 

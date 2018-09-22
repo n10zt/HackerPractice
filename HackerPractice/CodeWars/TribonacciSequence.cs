@@ -1,9 +1,12 @@
 ﻿using System;
-using HackerPractice.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HackerPractice.Easy
+namespace HackerPractice.CodeWars
 {
-    public class Template : IProblem
+    public class TribonacciSequence
     {
         /*****************************************************************
         * Procedure: RunTest
@@ -15,20 +18,20 @@ namespace HackerPractice.Easy
         {
             Console.WriteLine("-----Foo-----");
 
-            var output = Foo(1);
-            Utilities.CheckOutput<int>(output, 6);
+            var output = Tribonacci(Utilities.GetDoubleArray("1 1 1"), 8);
+            Utilities.CheckOutput<double>(output, Utilities.GetDoubleArray("1 1 1"));
         }
 
         /*****************************************************************
-        * Procedure: Foo
+        * Procedure: Tribonacci
         * Description: 
         * Input: 
         * Output: 
         *****************************************************************/
-        public int Foo(int n)
+        public double[] Tribonacci(double[] signature, int n)
         {
 
-            return 0;
+            return new double[1];
         }
     }
 }

@@ -87,21 +87,20 @@ namespace HackerPractice.Easy
 
             //Bubble sort
             bool isSwapped;
-            int itemCount = anArray.Length;
+            var itemCount = anArray.Length;
 
             do
             {
                 isSwapped = false;
                 itemCount--;
-                for (int j = 0; j < itemCount; j++)
+                for (var j = 0; j < itemCount; j++)
                 {
-                    if (anArray[j] > anArray[j + 1])
-                    {
-                        var t = anArray[j + 1];
-                        anArray[j + 1] = anArray[j];
-                        anArray[j] = t;
-                        isSwapped = true;
-                    }
+                    if (anArray[j] <= anArray[j + 1]) continue;
+
+                    var t = anArray[j + 1];
+                    anArray[j + 1] = anArray[j];
+                    anArray[j] = t;
+                    isSwapped = true;
                 }
             } while (isSwapped) ;
 

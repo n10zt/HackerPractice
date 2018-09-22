@@ -1,9 +1,12 @@
 ﻿using System;
-using HackerPractice.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace HackerPractice.Easy
 {
-    public class Template : IProblem
+    public class CamelChase
     {
         /*****************************************************************
         * Procedure: RunTest
@@ -13,10 +16,10 @@ namespace HackerPractice.Easy
         *****************************************************************/
         public void RunTest()
         {
-            Console.WriteLine("-----Foo-----");
+            Console.WriteLine("-----camelcase-----");
 
-            var output = Foo(1);
-            Utilities.CheckOutput<int>(output, 6);
+            var output = camelcase("saveChangesInTheEditor");
+            Utilities.CheckOutput<int>(output, 5);
         }
 
         /*****************************************************************
@@ -25,10 +28,19 @@ namespace HackerPractice.Easy
         * Input: 
         * Output: 
         *****************************************************************/
-        public int Foo(int n)
+        public int camelcase(string s)
         {
+            var counter = 0;
 
-            return 0;
+            foreach (var letter in s)
+            {
+                if (char.IsUpper(letter))
+                {
+                    counter++;
+                }
+            }
+
+            return ++counter;
         }
     }
 }

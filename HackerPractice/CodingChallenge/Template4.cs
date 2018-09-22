@@ -1,9 +1,9 @@
 ﻿using System;
 using HackerPractice.Model;
 
-namespace HackerPractice.Easy
+namespace HackerPractice.CodingChallenge
 {
-    public class Template : IProblem
+    public class Template4 : IProblem
     {
         /*****************************************************************
         * Procedure: RunTest
